@@ -24,6 +24,8 @@ rsiFileFilter = 'Robust Station Image (*.rsi);;RSI JSON metadata (*.json)'
 dmiFileFilter = 'DreamMaker Image (*.dmi)'
 pngFileFilter = 'PNG (*.png)'
 
+defaultLicenseInput = 'CC-BY-SA-3.0'
+
 class EditorWindow(QtW.QMainWindow):
     def __init__(self : EditorWindow):
         QtW.QMainWindow.__init__(self)
@@ -183,7 +185,7 @@ class EditorWindow(QtW.QMainWindow):
         
         self.sizeInfo = QtW.QLabel()
 
-        self.licenseInput = QtW.QLineEdit()
+        self.licenseInput = QtW.QLineEdit(defaultLicenseInput)
         self.licenseInput.setEnabled(False)
         self.licenseInput.editingFinished.connect(self.updateLicense)
 
